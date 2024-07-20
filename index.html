@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventivo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Intestazione e navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light" href="#">Bool Factory</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#">Servizi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#">Contatti</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenuto principale con il form -->
+    <main class="mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <h1>Richiesta Preventivo</h1>
+                    <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
+                    <form action="" id="form">
+                        <div class="mb-3">
+                            <label for="first-name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="first-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="last-name" class="form-label">Cognome</label>
+                            <input type="text" class="form-control" id="last-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <select id="job" class="form-select" aria-label="Select">
+                            <option selected value="">Seleziona il tipo di lavoro</option>
+                            <option value="1">Backend Development</option>
+                            <option value="2">Frontend Development</option>
+                            <option value="3">Project Analysis</option>
+                        </select>
+                        <div class="mb-3 mt-2">
+                            <label for="text-area" class="form-label">Textarea con Bootstrap
+                                5</label>
+                            <textarea class="form-control" id="text-area" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="promo-code" class="form-label">Codice Promozionale (opzionale)</label>
+                            <input type="text" class="form-control" id="promo-code">
+                            <div class="valid-feedback">Sconto del 25% applicato!</div>
+                            <div class="invalid-feedback">Codice non valido</div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="privacy-policy">
+                            <label class="form-check-label" for="privacy-policy">Accetto la Privacy Policy</label>
+                        </div>
+                        <div
+                            class="container d-flex flex-column flex-sm-row justify-content-around align-items-center mt-4 mt-sm-0">
+                            <div class="mb-2 mb-sm-0">
+                                <button type="submit" class="btn btn-primary">Calcola preventivo</button>
+                            </div>
+                            <div class="text-center">
+                                <div style="font-weight: bold;">Prezzo finale</div>
+                                <div id="total-price" style="font-weight: bold;">---</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Card -->
+                <div class="col-md-4 col-xs-12">
+                    <div class="card mt-5 mb-4">
+                        <img src="./images/image.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">I nostri contatti</h5>
+                            <p class="card-text">Se hai bisogno di aiuto puoi contattarci:</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">help@boolfactory.test</li>
+                            <li class="list-group-item">+1122334455</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Help desk</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Copyright -->
+    <footer class="footer pt-4 pb-5 bg-dark mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0 text-light">&copy; 2024 - Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
