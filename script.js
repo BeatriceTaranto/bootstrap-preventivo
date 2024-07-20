@@ -32,6 +32,8 @@ formElement.addEventListener("submit", function (event) {
     if (promoCodes.includes(userCode)) {
         totalPrice = promoPrice
         promoElement.classList.add("is-valid")
+    } else if (userCode === "") {
+        totalPrice = totalPrice
     } else {
         promoElement.classList.add("is-invalid")
     }
