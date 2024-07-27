@@ -1,22 +1,25 @@
-const formElement = document.getElementById("form")
-const promoElement = document.getElementById("promo-code")
-const selectJobElement = document.getElementById("job")
-const totalPriceElement = document.getElementById("total-price")
-const hours = 10
+const formElement = document.getElementById("form");
+const promoElement = document.getElementById("promo-code");
+const selectJobElement = document.getElementById("job");
+const totalPriceElement = document.getElementById("total-price");
+const hours = 10;
 const promoCodes = ["YHDNU32",
-    "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]
+    "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 
 formElement.addEventListener("submit", function (event) {
     event.preventDefault();
     const selectedJob = selectJobElement.value;
-    let pricePerHour;
+    let pricePerHour = 0;
 
-    if (selectedJob === "1") {
-        pricePerHour = 20.50
+    if (selectedJob === "0") {
+        totalPriceElement.innerHTML = "---";
+        return;
+    } else if (selectedJob === "1") {
+        pricePerHour = 20.50;
     } else if (selectedJob === "2") {
-        pricePerHour = 15.30
+        pricePerHour = 15.30;
     } else if (selectedJob === "3") {
-        pricePerHour = 33.60
+        pricePerHour = 33.60;
     }
 
     let totalPrice = pricePerHour * hours;
@@ -28,16 +31,16 @@ formElement.addEventListener("submit", function (event) {
 
     let promoPrice = totalPrice - calcPromoPrice(totalPrice)
 
-    promoElement.classList.remove("is-valid", "is-invalid")
+    promoElement.classList.remove("is-valid", "is-invalid");
     if (promoCodes.includes(userCode)) {
-        totalPrice = promoPrice
-        promoElement.classList.add("is-valid")
+        totalPrice = promoPrice;
+        promoElement.classList.add("is-valid");
     } else if (userCode === "") {
-        totalPrice = totalPrice
+        totalPrice = totalPrice;
     } else {
-        promoElement.classList.add("is-invalid")
+        promoElement.classList.add("is-invalid");
     }
 
-    totalPriceElement.innerHTML = "€" + totalPrice.toFixed(2)
+    totalPriceElement.innerHTML = "€" + totalPrice.toFixed(2);
 })
 
